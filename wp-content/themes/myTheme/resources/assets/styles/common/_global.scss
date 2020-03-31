@@ -1,0 +1,53 @@
+.wrap {
+    width: 80%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+#containerHeader {
+    display: flex;
+    justify-content: space-evenly;
+    #headerImage {
+        width: 20%;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+#gridProjects {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 25px;
+        grid-row-gap: 25px;
+        .blocProject {
+            text-align: center;
+            position: relative;
+            width: 340px;
+            height: 300px;
+            border-radius: 20px;
+            img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: -1;
+                border-radius: inherit;
+            }
+            .projectContent {
+                width: 100%;
+                height: 100%;
+                margin: auto;
+                background-color: rgba($color: #f5f3f3f3, $alpha: 0.8);
+                border-radius: inherit;
+                .wrap {
+                    width: 75%;
+                    margin: auto;
+                }
+            }
+        }
+}
