@@ -28,12 +28,13 @@
               {{ $realisation->nom_realisation}}
             </div>
             <div class="descriptionProject">
-            {{ $realisation->resume_realisation}}            
-            @foreach ($realisation->technologies_realisation as $rea)
-            <div class="tech"> {{ $rea }}</div>
-              
-            @endforeach
-
+            {{ $realisation->resume_realisation}}   
+            <ul class="containerTech">                  
+              @foreach ($realisation->technologies_realisation as $rea)
+                <li class="tech"> <p> {{ $rea }} </p></li>
+                
+              @endforeach
+              </ul>
                
               <div class="reabloc">               
               </div>

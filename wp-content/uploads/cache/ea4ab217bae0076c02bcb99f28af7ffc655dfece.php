@@ -29,12 +29,13 @@
 
             </div>
             <div class="descriptionProject">
-            <?php echo e($realisation->resume_realisation); ?>            
-            <?php $__currentLoopData = $realisation->technologies_realisation; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rea): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="tech"> <?php echo e($rea); ?></div>
-              
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
+            <?php echo e($realisation->resume_realisation); ?>   
+            <ul class="containerTech">                  
+              <?php $__currentLoopData = $realisation->technologies_realisation; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rea): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <li class="tech"> <p> <?php echo e($rea); ?> </p></li>
+                
+              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+              </ul>
                
               <div class="reabloc">               
               </div>
