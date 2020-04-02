@@ -17,7 +17,6 @@ class FrontPage extends Controller
         );
     $myQueries = get_posts($args);
     return $myQueries;  //renvoi du résultat de la requête
-
         
     }
 }

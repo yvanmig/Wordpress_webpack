@@ -3,17 +3,6 @@
 @section('content')
   @include('partials.page-header')
 
-
-
-
-
-
-
-
-
-
-
-
   <div id="gridProjects">
 
   @foreach ($realisations as $realisation)
@@ -44,15 +33,6 @@
       </div>  
       </a>    
   @endforeach
-
-
-
-
-
-
-
-
-
 
 
   {!! get_the_posts_navigation() !!}
