@@ -10,19 +10,16 @@ class FrontPage extends Controller
 
     public function realisations()
     {
+
         $args = array(
-            'numberposts' => 1,
-            'taxonomy' => 'realisations',
+            'post_type' => 'realisation',
+            'posts_per_page' => 5
         );
-        
-        $postsList = get_posts($args);
-        $posts = get_field('nom_realisation');
+    $myQueries = get_posts($args);
+    return $myQueries;  //renvoi du résultat de la requête
 
-            return $posts;
-
-
-
-        // return get_posts($args);
         
     }
 }
+
+

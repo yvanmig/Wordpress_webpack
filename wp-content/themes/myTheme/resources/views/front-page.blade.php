@@ -3,35 +3,57 @@
 @section('content')
   @include('partials.page-header')
 
-  <?php
-  $args = array(
-    'post_type' => 'realisation',
-    'posts_per_page' => 10 );
 
-    $loop = new WP_Query ( $args );
-    ?>
+
+
+
+
+
+
+
+
+
+
   <div id="gridProjects">
-    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+  @foreach ($realisations as $realisation)
+  <a href= {{ get_permalink($realisation->ID) }}>
       <div class="blocProject">
-        <img src=<?php the_field('image_realisation');?> alt="">
+
+        {!! wp_get_attachment_image($realisation->image_realisation, 'full', '', array("class" => "size-full currently__image")) !!}
+        {{ $realisation->nom_realisation}}
         <div class="projectContent"> 
           <div class="wrap">
             <div class="nameProject">
-              <?php the_field('nom_realisation'); ?>
+              {{ $realisation->nom_realisation}}
             </div>
             <div class="descriptionProject">
-              <?php the_field('description_realisation');?>
+            {{ $realisation->resume_realisation}}            
+            @foreach ($realisation->technologies_realisation as $rea)
+            <div class="tech"> {{ $rea }}</div>
+              
+            @endforeach
+
+               
+              <div class="reabloc">               
+              </div>
             </div>
-          </div>
-         
-        </div>
-        
-          
-      </div>
-    
-    
-    <?php endwhile ?> 
-  </div>
+          </div>         
+        </div>               
+      </div>  
+      </a>    
+  @endforeach
+
+
+
+
+
+
+
+
+
+
+
   {!! get_the_posts_navigation() !!}
 @endsection
 

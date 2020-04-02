@@ -1,35 +1,60 @@
 <?php $__env->startSection('content'); ?>
   <?php echo $__env->make('partials.page-header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
-  <?php
-  $args = array(
-    'post_type' => 'realisation',
-    'posts_per_page' => 10 );
 
-    $loop = new WP_Query ( $args );
-    ?>
+
+
+
+
+
+
+
+
+
+
   <div id="gridProjects">
-    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+  <?php $__currentLoopData = $realisations; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $realisation): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+  <a href= <?php echo e(get_permalink($realisation->ID)); ?>>
       <div class="blocProject">
-        <img src=<?php the_field('image_realisation');?> alt="">
+
+        <?php echo wp_get_attachment_image($realisation->image_realisation, 'full', '', array("class" => "size-full currently__image")); ?>
+
+        <?php echo e($realisation->nom_realisation); ?>
+
         <div class="projectContent"> 
           <div class="wrap">
             <div class="nameProject">
-              <?php the_field('nom_realisation'); ?>
+              <?php echo e($realisation->nom_realisation); ?>
+
             </div>
             <div class="descriptionProject">
-              <?php the_field('description_realisation');?>
+            <?php echo e($realisation->resume_realisation); ?>            
+            <?php $__currentLoopData = $realisation->technologies_realisation; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rea): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="tech"> <?php echo e($rea); ?></div>
+              
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+               
+              <div class="reabloc">               
+              </div>
             </div>
-          </div>
-         
-        </div>
-        
-          
-      </div>
-    
-    
-    <?php endwhile ?> 
-  </div>
+          </div>         
+        </div>               
+      </div>  
+      </a>    
+  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+
+
+
+
+
+
+
+
+
+
   <?php echo get_the_posts_navigation(); ?>
 
 <?php $__env->stopSection(); ?>

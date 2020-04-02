@@ -44,6 +44,8 @@
                 margin: auto;
                 background-color: rgba($color: #f5f3f3f3, $alpha: 0.8);
                 border-radius: inherit;
+                top: 0;
+                position: absolute;
                 .wrap {
                     width: 75%;
                     margin: auto;
