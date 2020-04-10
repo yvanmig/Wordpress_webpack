@@ -1,17 +1,6 @@
 <?php $__env->startSection('content'); ?>
   <?php echo $__env->make('partials.page-header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
-
-
-
-
-
-
-
-
-
-
-
   <div id="gridProjects">
 
   <?php $__currentLoopData = $realisations; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $realisation): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -45,15 +34,6 @@
       </div>  
       </a>    
   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-
-
-
-
-
-
-
-
 
 
   <?php echo get_the_posts_navigation(); ?>
