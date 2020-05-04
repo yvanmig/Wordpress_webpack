@@ -7,8 +7,13 @@
 #containerHeader {
     display: flex;
     justify-content: space-evenly;
+    #nameHeader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
     #headerImage {
-        width: 20%;
+        width: 50%;
         img {
             width: 100%;
             height: auto;
@@ -18,10 +23,15 @@
 
 #gridProjects {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        // grid-template-rows: repeat(3, 1fr);
         grid-column-gap: 25px;
         grid-row-gap: 25px;
+        padding-top: 6%;
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
         .blocProject {
             text-align: center;
             position: relative;
@@ -50,39 +60,48 @@
                     width: 75%;
                     margin: auto;
                 }
+                .nameProject {
+                    font-size: 25px;
+                }
             }
             .containerTech {
                 display: flex;
                 justify-content: space-evenly;
                 margin-block-start: 0;
-    padding-inline-start: 0;
+                padding-inline-start: 0;
+                flex-wrap: wrap;
+                padding-top: 20px;
             }
             .tech {
-                max-width: 20%;
                 background-color: black;
                 height: 20px;
+                transition: all 0.1s ease-out;
+            }
+            .tech:hover {
+                transform: scale(1.1);
             }
             ul {
                 list-style-type: none;
                 li {
                     display: inline-block;
-    padding: 0 .5em;
-    background-color: #313131;
-    color: #999;
-    border-width: 1px 1px 2px 1px;
-    border-style: solid;
-    border-color: #222;
-    border-radius: 3px;
-    text-transform: uppercase;
-    font-family: MontSerrat,Tahoma,Arial,sans-serif;
-    font-weight: 700;
-    font-size: .75em;
-    box-shadow: 1px 1px 0 rgba(0,0,0,.25);
-    margin: 2px;
-
-    text-shadow: -1px -1px 0 #3f3f3f, -1px 0 0 #3f3f3f, -1px 1px 0 #3f3f3f, 0 -1px 0 #3f3f3f, 0 0 0 #3f3f3f, 0 1px 0 #3f3f3f, 1px -1px 0 #3f3f3f, 1px 0 0 #3f3f3f, 1px 1px 0 #3f3f3f;
+                    padding: 0 .5em;
+                    background-color: #313131;
+                    color: #999;
+                    border-width: 1px 1px 2px 1px;
+                    border-style: solid;
+                    border-color: #222;
+                    border-radius: 3px;
+                    text-transform: uppercase;
+                    font-family: MontSerrat,Tahoma,Arial,sans-serif;
+                    font-weight: 700;
+                    font-size: .75em;
+                    box-shadow: 1px 1px 0 rgba(0,0,0,.25);
+                    margin: 2px;
+                    text-shadow: -1px -1px 0 #3f3f3f, -1px 0 0 #3f3f3f, -1px 1px 0 #3f3f3f, 0 -1px 0 #3f3f3f, 0 0 0 #3f3f3f, 0 1px 0 #3f3f3f, 1px -1px 0 #3f3f3f, 1px 0 0 #3f3f3f, 1px 1px 0 #3f3f3f;
 
                 }
             }
+            
         }
+        
 }

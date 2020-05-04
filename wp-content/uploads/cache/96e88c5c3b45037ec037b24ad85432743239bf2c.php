@@ -1,4 +1,4 @@
-<header class="banner">
+<!-- <header class="banner">
   <div class="container">
     <a class="brand" href="<?php echo e(home_url('/')); ?>"><?php echo e(get_bloginfo('name', 'display')); ?></a>
     <nav class="nav-primary">
@@ -8,4 +8,4 @@
       <?php endif; ?>
     </nav>
   </div>
-</header>
+</header> -->
